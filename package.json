@@ -4,7 +4,7 @@
   "description": "testando novas funcionalidades, estrutura e design do projeto integrador(seeCities)",
   "main": "main.js",
   "scripts": {
-    "start": "electron ." 
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/vicenteschwarz/teste-new_configs_seeCities/issues"
   },
-  "homepage": "https://github.com/vicenteschwarz/teste-new_configs_seeCities#readme"
+  "homepage": "https://github.com/vicenteschwarz/teste-new_configs_seeCities#readme",
+  "devDependencies": {
+    "electron": "^37.2.4",
+    "electron-rebuild": "^3.2.9"
+  }
 }
