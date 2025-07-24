@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+  background: #f4f7f5;
+  margin: 0;
+  padding: 0;
+}
+.logo-topo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+.admin-container {
+  margin: 80px auto;
+  max-width: 900px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2 {
+  color: #23713b;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 30px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+button {
+  background-color: #23713b;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #1c5a2f;
+}

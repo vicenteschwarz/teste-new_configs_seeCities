@@ -1,0 +1,34 @@
+<!-- src/adm/admin.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Administrativo - seeCities</title>
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+  <img src="../img/logo.png" class="logo-topo" alt="Logo SeeCities">
+  <div class="admin-container">
+    <h2>Gerenciamento de Usuários</h2>
+    <section class="admin-panels">
+      <div>
+        <h3>Usuários</h3>
+        <button onclick="alert('Incluir Usuário')">Incluir</button>
+        <table>
+          <thead><tr><th>Nome</th><th>Perfil</th><th>Ações</th></tr></thead>
+          <tbody id="userTable"></tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Administradores</h3>
+        <button onclick="alert('Incluir ADM')">Incluir</button>
+        <table>
+          <thead><tr><th>Nome</th><th>Login</th><th>Ações</th></tr></thead>
+          <tbody id="adminTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="./admin.js"></script>
+</body>
+</html>

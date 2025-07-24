@@ -1,0 +1,35 @@
+<!-- src/agendamento/agendamento.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento - seeCities</title>
+  <link rel="stylesheet" href="../styles/agendamento.css">
+</head>
+<body>
+  <img src="../img/logo.png" class="logo-topo" alt="Logo SeeCities">
+  <div class="agendamento-container">
+    <h2>Agende sua visita</h2>
+    <form>
+      <label>Cidade:
+        <select id="cidadeSelect">
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Paris">Paris</option>
+        </select>
+      </label>
+      <label>Data:
+        <input type="date" id="data">
+      </label>
+      <label>Horário:
+        <input type="time" id="hora">
+      </label>
+      <label>Comentário:
+        <textarea id="comentario" placeholder="Observações opcionais..."></textarea>
+      </label>
+      <button type="button" onclick="agendarVisita()">Confirmar Agendamento</button>
+    </form>
+  </div>
+  <script src="./agendamento.js"></script>
+</body>
+</html>
