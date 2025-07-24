@@ -1,0 +1,20 @@
+{
+  "name": "teste-new_configs_seecities",
+  "version": "1.0.0",
+  "description": "testando novas funcionalidades, estrutura e design do projeto integrador(seeCities)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ." 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicenteschwarz/teste-new_configs_seeCities.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vicenteschwarz/teste-new_configs_seeCities/issues"
+  },
+  "homepage": "https://github.com/vicenteschwarz/teste-new_configs_seeCities#readme"
+}
