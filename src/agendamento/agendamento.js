@@ -1,23 +1,9 @@
-//scripts/agendamento.js
-const cidadeSelect = document.getElementById('cidadeSelect');
-const data = document.getElementById('data');
-const hora = document.getElementById('hora');
-const comentario = document.getElementById('comentario');
+function confirmarAgendamento() {
+  const cidade = document.getElementById('cidadeSelect').value;
+  const data = document.getElementById('data').value;
+  const hora = document.getElementById('hora').value;
+  const comentario = document.getElementById('comentario').value;
 
-const destinosDisponiveis = ['Rio de Janeiro', 'Buenos Aires', 'Paris'];
-destinosDisponiveis.forEach(cidade => {
-  const option = document.createElement('option');
-  option.text = cidade;
-  cidadeSelect.add(option);
-});
-
-function agendarVisita() {
-  const agendamento = {
-    cidade: cidadeSelect.value,
-    data: data.value,
-    hora: hora.value,
-    comentario: comentario.value
-  };
-  console.log('Agendamento:', agendamento);
-  alert('Agendamento realizado com sucesso!');
+  console.log({ cidade, data, hora, comentario });
+  alert(`Agendamento confirmado para ${cidade} em ${data} às ${hora}`);
 }

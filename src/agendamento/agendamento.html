@@ -1,21 +1,20 @@
-<!-- src/agendamento/agendamento.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Agendamento - seeCities</title>
+  <title>Agendamento - SeeCities</title>
   <link rel="stylesheet" href="../styles/agendamento.css">
 </head>
 <body>
   <img src="../img/logo.png" class="logo-topo" alt="Logo SeeCities">
   <div class="agendamento-container">
-    <h2>Agende sua visita</h2>
+    <h2>Agendar Visita</h2>
     <form>
       <label>Cidade:
         <select id="cidadeSelect">
-          <option value="Rio de Janeiro">Rio de Janeiro</option>
-          <option value="Buenos Aires">Buenos Aires</option>
-          <option value="Paris">Paris</option>
+          <option>Rio de Janeiro</option>
+          <option>Buenos Aires</option>
+          <option>Paris</option>
         </select>
       </label>
       <label>Data:
@@ -25,11 +24,11 @@
         <input type="time" id="hora">
       </label>
       <label>Comentário:
-        <textarea id="comentario" placeholder="Observações opcionais..."></textarea>
+        <textarea id="comentario"></textarea>
       </label>
-      <button type="button" onclick="agendarVisita()">Confirmar Agendamento</button>
+      <button type="button" onclick="confirmarAgendamento()">Agendar</button>
     </form>
   </div>
-  <script src="../agendamento.js"></script>
+  <script src="./agendamento.js"></script>
 </body>
 </html>

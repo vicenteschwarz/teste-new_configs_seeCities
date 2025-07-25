@@ -1,4 +1,3 @@
-
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
@@ -16,24 +15,27 @@ function createWindow(pagina = 'src/login/index.html') {
   return win;
 }
 
+let winHome, winAdmin, winAgendamento;
+
 app.whenReady().then(() => {
   createWindow();
 
   ipcMain.handle('abrir-home', () => {
-  return createWindow('src/homePage/home.html');
-});
+    if (!winHome || winHome.isDestroyed()) winHome = createWindow('src/homePage/home.html');
+    else winHome.focus();
+  });
 
-ipcMain.handle('abrir-admin', () => {
-  return createWindow('src/adm/admin.html');
-});
+  ipcMain.handle('abrir-admin', () => {
+    if (!winAdmin || winAdmin.isDestroyed()) winAdmin = createWindow('src/adm/admin.html');
+    else winAdmin.focus();
+  });
 
-ipcMain.handle('abrir-agendamento', () => {
-  return createWindow('src/agendamento/agendamento.html');
-});
+  ipcMain.handle('abrir-agendamento', () => {
+    if (!winAgendamento || winAgendamento.isDestroyed()) winAgendamento = createWindow('src/agendamento/agendamento.html');
+    else winAgendamento.focus();
+  });
 });
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
-
-//teste commit falho

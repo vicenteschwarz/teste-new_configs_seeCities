@@ -1,26 +1,20 @@
 body {
   font-family: sans-serif;
-  background: #e6f0ea;
+  background: #eaf5ed;
   margin: 0;
-  padding: 0;
-}
-.logo-topo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100px;
 }
 .agendamento-container {
-  margin: 80px auto;
   max-width: 500px;
+  margin: 100px auto;
   background: white;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 h2 {
-  text-align: center;
   color: #23713b;
+  text-align: center;
+  margin-bottom: 20px;
 }
 form {
   display: flex;
@@ -31,11 +25,10 @@ label {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  color: #333;
 }
 input, select, textarea {
   padding: 10px;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }

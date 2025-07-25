@@ -1,25 +1,20 @@
 //scripts/login.js 
 
-const userInput = document.getElementById('user');
-const senhaInput = document.getElementById('senha');
-const perfilInput = document.getElementById('perfil');
-const msg = document.getElementById('msg');
-const botao = document.getElementById('botao-acesso');
+document.addEventListener('DOMContentLoaded', () => {
+  const user = document.getElementById('user');
+  const senha = document.getElementById('senha');
+  const perfil = document.getElementById('perfil');
+  const botao = document.getElementById('botao-acesso');
+  const msg = document.getElementById('msg');
 
-botao.addEventListener('click', async () => {
-  const login = userInput.value;
-  const senha = senhaInput.value;
-  const perfil = perfilInput.value;
-
-  // Validação fake temporária (substituir pela API do Electron depois)
-  if (login === 'admin' && senha === '123' && perfil === 'ADM') {
-    localStorage.setItem('usuarioLogado', JSON.stringify({ nome: login, perfil }));
-    window.location.href = 'admin.html';
-  } else if (login === 'usuario' && senha === '123' && perfil === 'USER') {
-    localStorage.setItem('usuarioLogado', JSON.stringify({ nome: login, perfil }));
-    window.location.href = 'home.html';
-  } else {
-    msg.textContent = 'Credenciais inválidas';
-    msg.style.color = 'red';
-  }
+  botao.addEventListener('click', () => {
+    if (user.value === 'admin' && senha.value === '123' && perfil.value === 'ADM') {
+      window.electronAPI.abrirAdmin();
+    } else if (user.value === 'usuario' && senha.value === '123' && perfil.value === 'USER') {
+      window.electronAPI.abrirHome();
+    } else {
+      msg.textContent = 'Credenciais inválidas';
+      msg.style.color = 'red';
+    }
+  });
 });

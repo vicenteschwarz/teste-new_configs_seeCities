@@ -1,40 +1,37 @@
-//scripts/home.js
-const container = document.getElementById('destinosContainer');
-const botoes = document.querySelectorAll('.continent-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('destinosContainer');
+  const botoes = document.querySelectorAll('.continent-btn');
 
-const destinosFakes = {
-  'América do Sul': [
-    { nome: 'Rio de Janeiro', pais: 'Brasil', imagem: 'img/rio.jpg', nota: 5.0, reviews: 143 },
-    { nome: 'Buenos Aires', pais: 'Argentina', imagem: 'img/buenosaires.jpg', nota: 4.7, reviews: 98 },
-  ],
-  'Europa': [
-    { nome: 'Paris', pais: 'França', imagem: 'img/paris.jpg', nota: 4.9, reviews: 200 },
-  ]
-};
+  const destinos = {
+    'América do Sul': [
+      { nome: 'Rio de Janeiro', pais: 'Brasil', imagem: '../img/rio.jpg', nota: 5.0, reviews: 143 },
+      { nome: 'Buenos Aires', pais: 'Argentina', imagem: '../img/buenosaires.jpg', nota: 4.7, reviews: 98 }
+    ],
+    'Europa': [
+      { nome: 'Paris', pais: 'França', imagem: '../img/paris.jpg', nota: 4.9, reviews: 120 }
+    ]
+  };
 
-function renderDestinos(continente) {
-  container.innerHTML = '';
-  destinosFakes[continente].forEach(dest => {
-    container.innerHTML += `
+  function render(continente) {
+    container.innerHTML = destinos[continente].map(d => `
       <div class="city-card">
-        <img src="${dest.imagem}" alt="${dest.nome}">
+        <img src="${d.imagem}" alt="${d.nome}">
         <div class="card-info">
-          <h3>${dest.nome}</h3>
-          <p>${dest.pais}</p>
-          <span class="rating">${dest.nota} (${dest.reviews} reviews)</span>
-          <button>Ver mais</button>
+          <h3>${d.nome}</h3>
+          <p>${d.pais}</p>
+          <span>${d.nota} (${d.reviews} reviews)</span>
+          <button onclick="window.electronAPI.abrirAgendamento()">Agendar</button>
         </div>
-      </div>`;
-  });
-}
+      </div>`).join('');
+  }
 
-botoes.forEach(btn => {
-  btn.addEventListener('click', () => {
-    botoes.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderDestinos(btn.textContent);
+  botoes.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.continent-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
+      render(btn.textContent);
+    });
   });
+
+  render('América do Sul');
 });
-
-// Inicializa com o primeiro continente
-renderDestinos('América do Sul');

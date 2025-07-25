@@ -5,3 +5,4 @@ contextBridge.exposeInMainWorld('electronAPI', {
   abrirAdmin: () => ipcRenderer.invoke('abrir-admin'),
   abrirAgendamento: () => ipcRenderer.invoke('abrir-agendamento')
 });
+

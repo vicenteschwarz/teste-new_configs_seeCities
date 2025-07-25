@@ -11,9 +11,8 @@ body {
 .logo-topo {
   position: absolute;
   top: 20px;
-  left: 40px;
-  bottom: 20px;
-  width: 250px;
+  left: 20px;
+  width: 120px;
 }
 .login-container {
   background: white;
